@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
   <title>Add Record to User Table Form</title>
   </head>
   <body>
@@ -38,7 +39,7 @@
     $my_cigarettes[3] = new Cigarettes("Lucky Strike", 19, 6, 0.2);
     $my_cigarettes[4] = new Cigarettes("Cameleon", 21, 9, 0.6);
     
-    echo '<table><tr><th>name</th><th>package size</th><th>tar (mg)</th><th>nicotine (mg)</th></tr>';
+    echo '<table><td colspan=4><h1>Cigarettes</h1></td><tr><th>name</th><th>package size</th><th>tar (mg)</th><th>nicotine (mg)</th></tr>';
     foreach ($my_cigarettes as $row) {
     	echo $row->showDetails();
     }
@@ -85,7 +86,7 @@
     $my_cigars[3] = new Cigars("Smoking Lolly", 19, 6, 0.2, 90, 20, "World Wide Web", 60);
     $my_cigars[4] = new Cigars("Little Joe", 21, 9, 0.6, 60, 30, "Austria", 60);
 
-	echo '<table><tr><th>name</th><th>package size</th><th>tar (mg)</th><th>nicotine (mg)</th><th>length</th><th>width</th><th>country</th><th>storage humidity</th></tr>';
+    echo '<table><tr><td colspan=8><h1>Cigars</h1></td></tr><tr><th>name</th><th>package size</th><th>tar (mg)</th><th>nicotine (mg)</th><th>length</th><th>width</th><th>country</th><th>storage humidity</th></tr>';
     foreach ($my_cigars as $row) {
     	echo $row->showDetails();
     }
