@@ -22,10 +22,12 @@
 	      }
 
 		  public function showDetails() {
-		      return 'The cigarette brand is  ' . $this->name .
-		      ' and has ' . $this->package_size . ' cigarettes in a package' .
-		      ', it includes ' . $this->tar_amt . ' mg of tar and '  .
-		      $this->nicotine_amt . ' mg of nicotine. ';
+//		      return 'The cigarette brand is  ' . $this->name .
+//		      ' and has ' . $this->package_size . ' cigarettes in a package' .
+//		      ', it includes ' . $this->tar_amt . ' mg of tar and '  .
+//		      $this->nicotine_amt . ' mg of nicotine. ';
+
+		  	return '<tr><td>' . $this->name . '</td><td>' . $this->package_size . '</td><td>' . $this->tar_amt . '</td><td>' . $this->nicotine_amt . '</td></tr>';
 	      }
 
 
@@ -36,10 +38,11 @@
     $my_cigarettes[3] = new Cigarettes("Lucky Strike", 19, 6, 0.2);
     $my_cigarettes[4] = new Cigarettes("Cameleon", 21, 9, 0.6);
     
-
+    echo '<table><tr><th>name</th><th>package size</th><th>tar (mg)</th><th>nicotine (mg)</th></tr>';
     foreach ($my_cigarettes as $row) {
-    	echo '<p>' . $row->showDetails() . '</p>';
+    	echo $row->showDetails();
     }
+    echo '</table>';
     	/*
       echo "<br>";
       echo $row->name;
@@ -68,8 +71,10 @@
         }
 
       public function showDetails() {
-          return 'The cigar brand is  ' . $this->name .
+  /*        return 'The cigar brand is  ' . $this->name .
           ' and has ' . $this->package_size . ' cigars in a package, it includes ' . $this->tar_amt . ' mg of tar and ' . $this->nicotine_amt . ' mg of nicotine. You may be surprised that cigars are bigger than cigarettes. This certain type, for example is ' . $this->width . 'mm wide, and' . $this->length . 'mm long. The country of origin is ' . $this->country . ', but it\'s available for all cigar lovers around the world. Just pay attention to store them in container providing a humidity of ' . $this->storage_humidity . '%.';
+*/
+          return '<tr><td>' . $this->name . '</td><td>' . $this->package_size . '</td><td>' . $this->tar_amt . '</td><td>' . $this->nicotine_amt . '</td><td>' . $this->length . '</td><td>' . $this->width . '</td><td>' . $this->country . '</td><td>' . $this->storage_humidity . '</td></tr>';
         }
 
       }
@@ -80,9 +85,14 @@
     $my_cigars[3] = new Cigars("Smoking Lolly", 19, 6, 0.2, 90, 20, "World Wide Web", 60);
     $my_cigars[4] = new Cigars("Little Joe", 21, 9, 0.6, 60, 30, "Austria", 60);
 
+	echo '<table><tr><th>name</th><th>package size</th><th>tar (mg)</th><th>nicotine (mg)</th><th>length</th><th>width</th><th>country</th><th>storage humidity</th></tr>';
     foreach ($my_cigars as $row) {
-    echo '<p>' . $row->showDetails() . '</p>';
+    	echo $row->showDetails();
     }
+    echo '</table>';
+
+
+
   ?>
   </body>
 </html>
